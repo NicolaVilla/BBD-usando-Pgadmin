@@ -8,6 +8,8 @@ cursor = conn.cursor()
 cursor.execute(
     "CREATE TABLE IF NOT EXISTS comprador (id SERIAL PRIMARY KEY, nombre VARCHAR(255), edad INTEGER, correo VARCHAR(255))"
 )
-
+cursor.execute(
+    "CREATE TABLE IF NOT EXISTS autos (id SERIAL PRIMARY KEY, marca VARCHAR(255), modelo INTEGER, patente VARCHAR(255))"
+)
 # guarda la informacion
 conn.commit()
