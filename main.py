@@ -13,3 +13,12 @@ cursor.execute(
 )
 # guarda la informacion
 conn.commit()
+
+def insertar_comprador(nombre,edad,correo):
+    cursor.execute(
+        "INSERT INTO comprador (nombre, edad, correo) VALUES (%s, %s, %s)",
+        (nombre, edad, correo),
+    )
+insertar_comprador("Nicolas VIllarpando",23,"nico123@gmail.com")
+cursor.execute("SELECT * FROM comprador")
+print(cursor.fetchall())
