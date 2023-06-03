@@ -19,16 +19,31 @@ def insertar_comprador(nombre,edad,correo):
         "INSERT INTO compradores (nombre, edad, correo) VALUES (%s, %s, %s)",
         (nombre, edad, correo),
     )
+    conn.commit()
+    cursor.close
+
+
 def insertar_auto(marca, modelo, patente):
     cursor.execute(
         "INSERT INTO autos (nombre, edad, correo) VALUES (%s, %s, %s)",
         (marca, modelo, patente),
     )
+    conn.commit()
+    cursor.close
 
 def mostrar_compradores():
     cursor.execute("SELECT * FROM compradores")
     print(cursor.fetchall())
+    cursor.close
 
-def mostrar_clientes():
-    cursor.execute("SELECT * FROM compradores")
+def mostrar_autos():
+    cursor.execute("SELECT * FROM autos")
     print(cursor.fetchall())
+    cursor.close
+
+
+def actualizar_comprador():
+    cursor.execute(
+        "UPDATE compradores set nombre='Nicolas' where id=1"
+    )
+
