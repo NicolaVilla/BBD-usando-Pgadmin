@@ -24,3 +24,11 @@ def insertar_auto(marca, modelo, patente):
         "INSERT INTO autos (nombre, edad, correo) VALUES (%s, %s, %s)",
         (marca, modelo, patente),
     )
+
+def mostrar_compradores():
+    cursor.execute("SELECT * FROM compradores")
+    print(cursor.fetchall())
+
+def mostrar_clientes():
+    cursor.execute("SELECT * FROM compradores")
+    print(cursor.fetchall())
